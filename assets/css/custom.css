@@ -1,0 +1,36 @@
+.icon-header{
+  width: 200px;
+}
+.logo-header {
+  width: 180px;
+}
+.point {
+  background: linear-gradient(230deg, #5c84ff, #0032c8);
+  padding: 4px 4px 4px 4px;
+  border-radius: 25%;
+  color: #fff;
+  height: 1.25rem;
+  width: 1.25rem;
+  font-size: 0.75rem;
+  right: 5px;
+  top: -5px;
+}
+.page-titles {
+    padding: 10px 10px 10px 10px;
+    background: #ffffff;
+    transition: all .2s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* right: -15px; */
+    /* margin-left: -15px; */
+    margin-right: 151px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
+}
+.ganti-foto {
+  width: 135px;
+  border-radius: 100%;
+  border: 2px #ddd;
+  justify-content: center;
+  align-items: center;
+}
