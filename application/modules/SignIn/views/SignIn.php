@@ -11,61 +11,57 @@
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
 <style type="text/css">
-body 
-{
-    background-color: #0032c8;
-    -webkit-animation: color 5s ease-in 0s infinite alternate running;
-    -moz-animation: color 5s linear 0s infinite alternate running;
-    animation: color 5s linear 0s infinite alternate running;
-}
-
-@-webkit-keyframes color {
-    0% {
+    body {
         background-color: #0032c8;
+        -webkit-animation: color 5s ease-in 0s infinite alternate running;
+        -moz-animation: color 5s linear 0s infinite alternate running;
+        animation: color 5s linear 0s infinite alternate running;
     }
 
-    32% {
-        background-color: #0032c8;
+    @-webkit-keyframes color {
+        0% {
+            background-color: #0032c8;
+        }
+
+        32% {
+            background-color: #0032c8;
+        }
+
+        55% {
+            background-color: #ff9e01;
+        }
     }
 
-    55% {
-        background-color: #ff9e01;
-    }
-}
+    @-moz-keyframes color {
+        0% {
+            background-color: #0032c8;
+        }
 
-@-moz-keyframes color {
-    0% {
-        background-color: #0032c8;
-    }
+        32% {
+            background-color: #0032c8;
+        }
 
-    32% {
-        background-color: #0032c8;
-    }
-
-    55% {
-        background-color: #ff9e01;
-    }
-}
-
-@keyframes color {
-    0% {
-        background-color: #0032c8;
+        55% {
+            background-color: #ff9e01;
+        }
     }
 
-    32% {
-        background-color: #0032c8;
-    }
+    @keyframes color {
+        0% {
+            background-color: #0032c8;
+        }
 
-    55% {
-        background-color: #ff9e01;
+        32% {
+            background-color: #0032c8;
+        }
+
+        55% {
+            background-color: #ff9e01;
+        }
     }
-}
 </style>
 
 <body class="h-100">
-    <!--*******************
-        Preloader start
-    ********************-->
     <div id="preloader">
         <div class="loader">
             <svg class="circular" viewBox="25 25 50 50">
@@ -73,9 +69,6 @@ body
             </svg>
         </div>
     </div>
-    <!--*******************
-        Preloader end
-    ********************-->
     <div class="login-form-bg h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100">
@@ -84,23 +77,23 @@ body
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
                                 <style>
-                                .card {
-                                    border-top: 2px solid #0032c8;
-                                }
+                                    .card {
+                                        border-top: 2px solid #0032c8;
+                                    }
 
-                                .form-input-content .logo-bulog-sign {
-                                    width: 80%;
-                                    display: flex;
-                                    /* height: 100px; */
-                                    justify-content: center;
-                                    align-items: center;
-                                }
+                                    .form-input-content .logo-bulog-sign {
+                                        width: 80%;
+                                        display: flex;
+                                        /* height: 100px; */
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
 
-                                .text-center .text-center-session {
-                                    display: flex;
-                                    justify-content: center;
-                                    text-align: center;
-                                }
+                                    .text-center .text-center-session {
+                                        display: flex;
+                                        justify-content: center;
+                                        text-align: center;
+                                    }
                                 </style>
                                 <center>
                                     <img src="<?= base_url('assets/images/logo/bulog.png'); ?>" class="logo-bulog-sign" alt="">
@@ -111,50 +104,46 @@ body
                                         mulai session anda</h5>
                                 </a>
                                 <?php if ($this->session->flashdata('f_role')) : ?>
-                                <hr>
-                                <div class="card-content">
-                                    <div class="alert alert-info">Anda belum memulai <b>session</b>!, Silahkan mulai
-                                        <b>session</b> anda!
+                                    <hr>
+                                    <div class="card-content">
+                                        <div class="alert alert-info">Anda belum memulai <b>session</b>!, Silahkan mulai
+                                            <b>session</b> anda!
+                                        </div>
                                     </div>
-                                </div>
                                 <?php endif; ?>
                                 <?php if ($this->session->flashdata('f_sigin')) : ?>
-                                <hr>
-                                <div class="card-content">
-                                    <div class="alert alert-danger">Maaf <b>Username</b> atau <b>Password</b> Anda
-                                        salah, Silakan Coba Lagi!</div>
-                                </div>
+                                    <hr>
+                                    <div class="card-content">
+                                        <div class="alert alert-danger">Maaf <b>Username</b> atau <b>Password</b> Anda
+                                            salah, Silakan Coba Lagi!</div>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ($this->session->flashdata('n_sigin')) : ?>
-                                <hr>
-                                <div class="card-content">
-                                    <div class="alert alert-warning">Maaf <b>Data anda</b> tidak terdaftar di
-                                        kepegawaian, Silakan hubungi administrator!</div>
-                                </div>
+                                    <hr>
+                                    <div class="card-content">
+                                        <div class="alert alert-warning">Maaf <b>Data anda</b> tidak terdaftar di
+                                            kepegawaian, Silakan hubungi administrator!</div>
+                                    </div>
                                 <?php endif; ?>
                                 <?php if ($this->session->flashdata('n_sigin_nonaktif')) : ?>
-                                <hr>
-                                <div class="card-content">
-                                    <div class="alert alert-warning">Maaf <b>Status User anda</b> di Non-Aktifkan, Silakan hubungi administrator!</div>
-                                </div>
+                                    <hr>
+                                    <div class="card-content">
+                                        <div class="alert alert-warning">Maaf <b>Status User anda</b> di Non-Aktifkan, Silakan hubungi administrator!</div>
+                                    </div>
                                 <?php endif; ?>
-                                <form action="<?= base_url('login/aksi_login'); ?>" class="mt-5 mb-5 login-input"
-                                    method="POST">
+                                <form action="<?= base_url('SignIn/check_signin'); ?>" class="mt-5 mb-5 login-input" method="POST">
                                     <div class="form-group">
                                         <label for="Username">Username</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="username" tabindex="1"
-                                                style="border-bottom: 2px solid #0032c85e" required>
+                                            <input type="text" class="form-control" name="username" tabindex="1" style="border-bottom: 2px solid #0032c85e" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="Password">Password</label>
                                         <div class="input-group">
-                                            <input type="password" id="password" class="form-control" name="password"
-                                                tabindex="2" style="border-bottom: 2px solid #0032c85e" required>
+                                            <input type="password" id="password" class="form-control" name="password" tabindex="2" style="border-bottom: 2px solid #0032c85e" required>
                                             <div class="input-group-append">
-                                                <button class="btn btn-primary" onclick="myFunction()" type="button"
-                                                    id="customCheck1">
+                                                <button class="btn btn-primary" onclick="myFunction()" type="button" id="customCheck1">
                                                     <i class="far fa-eye" id="customCheck1"></i>
                                                 </button>
                                             </div>
@@ -169,8 +158,7 @@ body
                                     <button type="submit" class="btn login-form__btn submit w-100" name="submit">Sign
                                         In</button>
                                 </form>
-                                <p class="mt-5 login-form__footer" style="text-align: center;">Bulog <a href="#"
-                                        class="text-primary"> &copy; <?= date('Y'); ?></a></p>
+                                <p class="mt-5 login-form__footer" style="text-align: center;">Bulog <a href="#" class="text-primary"> &copy; <?= date('Y'); ?></a></p>
                             </div>
                         </div>
                     </div>
@@ -178,24 +166,20 @@ body
             </div>
         </div>
     </div>
-    <!--**********************************
-        Scripts
-    ***********************************-->
     <script src="<?= base_url('assets/plugins/common/common.min.js'); ?>"></script>
     <script src="<?= base_url('assets/js/custom.min.js'); ?>"></script>
     <script src="<?= base_url('assets/js/settings.js'); ?>"></script>
     <script src="<?= base_url('assets/js/gleek.js'); ?>"></script>
     <script src="<?= base_url('assets/js/styleSwitcher.js'); ?>"></script>
-    <!-- Script Show Hidden Password -->
     <script>
-    function myFunction() {
-        var x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
         }
-    }
     </script>
 </body>
 
