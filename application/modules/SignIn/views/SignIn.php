@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Login - Bulog</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/logo/ibulog.png'); ?>">
+    <title><?= $PageTitle; ?> | <?= $title; ?></title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/apps/icon/' . $icon); ?>">
     <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
 </head>
@@ -94,10 +94,21 @@
                                         justify-content: center;
                                         text-align: center;
                                     }
+
+                                    .login-page-info {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-content: center;
+                                    }
+
+                                    #img-app {
+                                        width: 430px;
+                                        height: 100%;
+                                    }
                                 </style>
-                                <center>
-                                    <img src="<?= base_url('assets/images/logo/bulog.png'); ?>" class="logo-bulog-sign" alt="">
-                                </center>
+                                <div class="login-page-info">
+                                    <img src="<?= base_url('assets/images/apps/logo-signin/' . $logo_signin); ?>" id="img-app" class="logo-login-sign" alt="logo-<?= $appname; ?>-sign">
+                                </div>
                                 <hr>
                                 <a class="text-center" href="<?= base_url(''); ?>">
                                     <h5 class="text-center-session" style="color: #9e9e9e; font-style: italic">Silahkan
@@ -158,7 +169,9 @@
                                     <button type="submit" class="btn login-form__btn submit w-100" name="submit">Sign
                                         In</button>
                                 </form>
-                                <p class="mt-5 login-form__footer" style="text-align: center;">Bulog <a href="#" class="text-primary"> &copy; <?= date('Y'); ?></a></p>
+                                <p class="mt-5 login-form__footer" style="text-align: center;">
+                                    Version: <?= $version; ?> - <?= $version_type ?><br><a href="#" class="text-primary"> &copy; <?= $appname ?> | <?= $develop ?> <?= $year_dev ?> - <?= date('Y'); ?></a>
+                                </p>
                             </div>
                         </div>
                     </div>

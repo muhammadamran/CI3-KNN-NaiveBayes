@@ -13,7 +13,39 @@ class SignIn extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('SignIn');
+		// GET SETTING
+		$get_setting = $this->M_SignIn->get_setting();
+		if ($get_setting == NULL) {
+			$value['icon'] = 'icon.png';
+			$value['logo'] = 'logo.png';
+			$value['logo_sidebar'] = 'logo-default.png';
+			$value['title'] = 'Judul - Aplikasi Berbasis Web';
+			$value['appname'] = 'App Name';
+			$value['develop'] = 'Developer';
+			$value['year_dev'] = '2021';
+			$value['version'] = '1.0.0';
+			$value['version_type'] = 'BETA';
+			$value['logo_signin'] = 'logo-signin.png';
+			$value['bg_sign'] = 'Grdient';
+			$value['primary_color'] = '#0032c8';
+		} else {
+			$value['icon'] = $get_setting[0]->icon;
+			$value['logo'] = $get_setting[0]->logo;
+			$value['logo_sidebar'] = $get_setting[0]->logo_sidebar;
+			$value['title'] = $get_setting[0]->title;
+			$value['appname'] = $get_setting[0]->appname;
+			$value['develop'] = $get_setting[0]->develop;
+			$value['year_dev'] = $get_setting[0]->year_dev;
+			$value['version'] = $get_setting[0]->version;
+			$value['version_type'] = $get_setting[0]->version_type;
+			$value['logo_signin'] = $get_setting[0]->logo_signin;
+			$value['bg_sign'] = $get_setting[0]->bg_sign;
+			$value['primary_color'] = $get_setting[0]->primary_color;
+		}
+
+		$value['PageTitle'] = 'Sign In';
+
+		$this->load->view('SignIn', $value);
 	}
 
 	public function check_signin()
@@ -47,7 +79,37 @@ class SignIn extends CI_Controller
 
 					if (@$cek) {
 
+						// GET DATA EMPLOYEE FOR SESSION
 						$get_employee = $this->M_SignIn->get_employee($cek->username);
+						// GET SETTING
+						$get_setting = $this->M_SignIn->get_setting();
+						if ($get_setting == NULL) {
+							$icon = 'icon-default.png';
+							$logo = 'logo-default.png';
+							$logo_sidebar = 'logo-default.png';
+							$title = 'Judul - Aplikasi Berbasis Web';
+							$appname = 'App Name';
+							$develop = 'Developer';
+							$year_dev = '2021';
+							$version = '1.0.0';
+							$version_type = 'BETA';
+							$logo_signin = 'logo_signin.png';
+							$bg_sign = 'Grdient';
+							$primary_color = '#0032c8';
+						} else {
+							$icon = $get_setting[0]->icon;
+							$logo = $get_setting[0]->logo;
+							$logo_sidebar = $get_setting[0]->logo_sidebar;
+							$title = $get_setting[0]->title;
+							$appname = $get_setting[0]->appname;
+							$develop = $get_setting[0]->develop;
+							$year_dev = $get_setting[0]->year_dev;
+							$version = $get_setting[0]->version;
+							$version_type = $get_setting[0]->version_type;
+							$logo_signin = $get_setting[0]->logo_signin;
+							$bg_sign = $get_setting[0]->bg_sign;
+							$primary_color = $get_setting[0]->primary_color;
+						}
 
 						$data_session = array(
 							'ID' => $cek->ID,
@@ -93,7 +155,20 @@ class SignIn extends CI_Controller
 							'id_kecamatan' => $get_employee[0]->id_kecamatan,
 							'nm_kecamatan' => $get_employee[0]->nm_kecamatan,
 							'id_kelurahan' => $get_employee[0]->id_kelurahan,
-							'nm_kelurahan' => $get_employee[0]->nm_kelurahan
+							'nm_kelurahan' => $get_employee[0]->nm_kelurahan,
+							// SETTING
+							'icon' => $icon,
+							'logo' => $logo,
+							'logo_sidebar' => $logo_sidebar,
+							'title' => $title,
+							'appname' => $appname,
+							'develop' => $develop,
+							'year_dev' => $year_dev,
+							'version' => $version,
+							'version_type' => $version_type,
+							'logo_signin' => $logo_signin,
+							'bg_sign' => $bg_sign,
+							'primary_color' => $primary_color
 						);
 
 						$data_log = array(

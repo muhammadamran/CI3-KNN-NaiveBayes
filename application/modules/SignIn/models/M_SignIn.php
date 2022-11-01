@@ -2,6 +2,13 @@
 class M_SignIn extends CI_Model
 {
 
+    // GET SETTING APPS
+    public function get_setting()
+    {
+        return $this->db->query("SELECT * FROM tbl_setting ORDER BY ID ASC")->result();
+    }
+
+    // CEK LOGIN USER TRUE OR FALSE
     public function check_signin($table, $data)
     {
         $query = $this->db->get_where($table, $data);
@@ -13,12 +20,14 @@ class M_SignIn extends CI_Model
         }
     }
 
+    // CHECK STATUS USERS
     public function get_status_user_employee($username)
     {
         return $this->db->query("SELECT status_user FROM tbl_users
             WHERE username='$username'")->result();
     }
 
+    // GET DATA FROM TABLE EMPLOYEE
     public function get_employee($username)
     {
         return $this->db->query("SELECT *,
@@ -34,6 +43,7 @@ class M_SignIn extends CI_Model
             WHERE a.Login='$username'")->result();
     }
 
+    // GET ROLE FROM TBL_EMPLOYEE
     public function get_role($username)
     {
         return $this->db->query("SELECT Role FROM tbl_users

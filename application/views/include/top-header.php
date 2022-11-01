@@ -4,10 +4,10 @@
 	<div class="nav-header">
 		<div class="brand-logo">
 			<a href="#!">
-				<b class="logo-abbr"><img src="<?= base_url('assets/images/logo/ibulog.png');?>" class="icon-header" alt=""> </b>
-				<span class="logo-compact"><img src="<?= base_url('assets/images/logo/bulog.png');?>" alt=""></span>
+				<b class="logo-abbr"><img src="<?= base_url('assets/images/logo/ibulog.png'); ?>" class="icon-header" alt=""> </b>
+				<span class="logo-compact"><img src="<?= base_url('assets/images/logo/bulog.png'); ?>" alt=""></span>
 				<span class="brand-title">
-					<img src="<?= base_url('assets/images/logo/bulog.png');?>" class="logo-header" alt="">
+					<img src="<?= base_url('assets/images/logo/bulog.png'); ?>" class="logo-header" alt="">
 				</span>
 			</a>
 		</div>
@@ -92,7 +92,7 @@
 						</div>
 					</li>
 					<li class="icons dropdown d-none d-md-flex">
-						<a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+						<a href="javascript:void(0)" class="log-user" data-toggle="dropdown">
 							<span> Hak Akses: <?= $this->session->userdata('Role'); ?></span>
 						</a>
 					</li>
@@ -100,29 +100,29 @@
 						<div class="user-img c-pointer position-relative" data-toggle="dropdown">
 							<span class="activity active"></span>
 							<!-- Foto -->
-							<?php 
+							<?php
 							$cek_gender = $this->session->userdata('JenisKelamin');
 							$cek_foto = $this->session->userdata('Foto');
 							?>
 							<?php if ($cek_gender == NULL) { ?>
 								<?php if ($cek_foto == NULL) { ?>
-									<img src="https://ia601009.us.archive.org/13/items/HeaderIconUser/Header-Icon-User.png"height="40" width="40" alt="">
+									<img src="https://ia601009.us.archive.org/13/items/HeaderIconUser/Header-Icon-User.png" height="40" width="40" alt="">
 								<?php } else { ?>
-									<img src="<?= base_url('assets/images/user/'.$this->session->userdata('Foto'));?>"height="40" width="40" alt="">
+									<img src="<?= base_url('assets/images/user/' . $this->session->userdata('Foto')); ?>" height="40" width="40" alt="">
 								<?php } ?>
 							<?php } else if ($cek_gender == '1') { ?>
 								<!-- PRIA -->
 								<?php if ($cek_foto == NULL) { ?>
-									<img src="https://assets.webiconspng.com/uploads/2016/11/avatar_business_costume_male_man_office_work_icon_628289.png"height="40" width="40" alt="">
+									<img src="https://assets.webiconspng.com/uploads/2016/11/avatar_business_costume_male_man_office_work_icon_628289.png" height="40" width="40" alt="">
 								<?php } else { ?>
-									<img src="<?= base_url('assets/images/user/'.$this->session->userdata('Foto'));?>"height="40" width="40" alt="">
+									<img src="<?= base_url('assets/images/user/' . $this->session->userdata('Foto')); ?>" height="40" width="40" alt="">
 								<?php } ?>
 							<?php } else if ($cek_gender == '2') { ?>
 								<!-- WNITA -->
 								<?php if ($cek_foto == NULL) { ?>
-									<img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png"height="40" width="40" alt="">
+									<img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png" height="40" width="40" alt="">
 								<?php } else { ?>
-									<img src="<?= base_url('assets/images/user/'.$this->session->userdata('Foto'));?>"height="40" width="40" alt="">
+									<img src="<?= base_url('assets/images/user/' . $this->session->userdata('Foto')); ?>" height="40" width="40" alt="">
 								<?php } ?>
 							<?php } ?>
 							<!-- End Foto -->
@@ -131,13 +131,13 @@
 							<div class="dropdown-content-body">
 								<ul>
 									<li>
-										<a href="<?= base_url('profile');?>"><i class="icon-user"></i> <span>Profile</span></a>
+										<a href="<?= base_url('profile'); ?>"><i class="icon-user"></i> <span>Profile</span></a>
 									</li>
 									<hr class="my-2">
 									<li>
-										<a href="<?= base_url('login/logout/'.$this->session->userdata('username'));?>">
+										<a href="<?= base_url('SignIn/SignOut/' . $this->session->userdata('username')); ?>">
 											<i class="icon-key"></i>
-											<span>Logout</span>
+											<span>Sign Out</span>
 										</a>
 									</li>
 								</ul>
