@@ -20,9 +20,9 @@ extends CI_Controller
       redirect('login');
     } else if ($this->session->userdata('username') != NULL) {
 
-      $value['PageTitle'] = 'NBC';
+      $value['PageTitle'] = 'Naive Bayes Classifier (NBC) - Index';
 
-      $this->load->view('include/head');
+      $this->load->view('include/head', $value);
       $this->load->view('include/alert');
       $this->load->view('include/top-header');
       $this->load->view('include/sidebar', $value);

@@ -21,7 +21,7 @@ class Setting extends CI_Controller
 
       $value['PageTitle'] = 'Setting';
 
-      $this->load->view('include/head');
+      $this->load->view('include/head', $value);
       $this->load->view('include/alert');
       $this->load->view('include/top-header');
       $this->load->view('include/sidebar', $value);

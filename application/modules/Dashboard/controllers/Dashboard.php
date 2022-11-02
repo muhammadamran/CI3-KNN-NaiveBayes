@@ -19,18 +19,13 @@ class Dashboard extends CI_Controller
       redirect('Signin');
     } else if ($this->session->userdata('username') != NULL) {
 
-      $Temployee = $this->M_dashboard->get_total_employee();
-      if ($Temployee == NULL) {
-        $value['total_employee'] = '0';
-      } else {
-        $value['total_employee'] = $Temployee[0]->total_employee;
-      }
+      $value['PageTitle'] = 'Dashboard';
 
-      $this->load->view('include/head');
+      $this->load->view('include/head', $value);
       $this->load->view('include/alert');
       $this->load->view('include/top-header');
       $this->load->view('include/sidebar', $value);
-      $this->load->view('home', $value);
+      $this->load->view('dashboard', $value);
       $this->load->view('include/footer');
     }
   }

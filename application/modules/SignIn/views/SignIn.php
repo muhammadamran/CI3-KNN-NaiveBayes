@@ -12,7 +12,7 @@
 </head>
 <style type="text/css">
     body {
-        background-color: #0032c8;
+        background-color: #005cac;
         -webkit-animation: color 5s ease-in 0s infinite alternate running;
         -moz-animation: color 5s linear 0s infinite alternate running;
         animation: color 5s linear 0s infinite alternate running;
@@ -20,11 +20,11 @@
 
     @-webkit-keyframes color {
         0% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         32% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         55% {
@@ -34,11 +34,11 @@
 
     @-moz-keyframes color {
         0% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         32% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         55% {
@@ -48,11 +48,11 @@
 
     @keyframes color {
         0% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         32% {
-            background-color: #0032c8;
+            background-color: #005cac;
         }
 
         55% {
@@ -78,10 +78,10 @@
                             <div class="card-body pt-5">
                                 <style>
                                     .card {
-                                        border-top: 2px solid #0032c8;
+                                        border-top: 2px solid #005cac;
                                     }
 
-                                    .form-input-content .logo-bulog-sign {
+                                    .form-input-content .logo-app-page {
                                         width: 80%;
                                         display: flex;
                                         /* height: 100px; */
@@ -146,13 +146,13 @@
                                     <div class="form-group">
                                         <label for="Username">Username</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="username" tabindex="1" style="border-bottom: 2px solid #0032c85e" required>
+                                            <input type="text" class="form-control" name="username" tabindex="1" style="border-bottom: 2px solid #005cac5e" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="Password">Password</label>
                                         <div class="input-group">
-                                            <input type="password" id="password" class="form-control" name="password" tabindex="2" style="border-bottom: 2px solid #0032c85e" required>
+                                            <input type="password" id="password" class="form-control" name="password" tabindex="2" style="border-bottom: 2px solid #005cac5e" required>
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary" onclick="myFunction()" type="button" id="customCheck1">
                                                     <i class="far fa-eye" id="customCheck1"></i>

@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Bulog - Sistem Bulog</title>
+	<title><?= $PageTitle; ?> | <?= $this->session->userdata('title'); ?></title>
 	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/logo/ibulog.png'); ?>">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/apps/icon/' . $this->session->userdata('icon')); ?>">
 	<!-- Pignose Calender -->
 	<link href="<?= base_url('assets/plugins/pg-calendar/css/pignose.calendar.min.css'); ?>" rel="stylesheet">
 	<!-- Chartist -->

@@ -4,10 +4,10 @@
 	<div class="nav-header">
 		<div class="brand-logo">
 			<a href="#!">
-				<b class="logo-abbr"><img src="<?= base_url('assets/images/logo/ibulog.png'); ?>" class="icon-header" alt=""> </b>
-				<span class="logo-compact"><img src="<?= base_url('assets/images/logo/bulog.png'); ?>" alt=""></span>
+				<b class="logo-abbr"><img src="<?= base_url('assets/images/apps/logo-sidebar/' . $this->session->userdata('logo_sidebar_one')); ?>" class="icon-header" alt=""> </b>
+				<span class="logo-compact"><img src="<?= base_url('assets/images/apps/logo-sidebar/' . $this->session->userdata('logo_sidebar')); ?>" alt=""></span>
 				<span class="brand-title">
-					<img src="<?= base_url('assets/images/logo/bulog.png'); ?>" class="logo-header" alt="">
+					<img src="<?= base_url('assets/images/apps/logo-sidebar/' . $this->session->userdata('logo_sidebar')); ?>" class="logo-header" alt="">
 				</span>
 			</a>
 		</div>

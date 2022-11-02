@@ -19,26 +19,28 @@ class Signin extends CI_Controller
 			$value['icon'] = 'icon.png';
 			$value['logo'] = 'logo.png';
 			$value['logo_sidebar'] = 'logo-default.png';
+			$value['logo_sidebar_one'] = 'logo_sidebar-one.png';
+			$value['logo_signin'] = 'logo_signin.png';
 			$value['title'] = 'Judul - Aplikasi Berbasis Web';
 			$value['appname'] = 'App Name';
 			$value['develop'] = 'Developer';
 			$value['year_dev'] = '2021';
 			$value['version'] = '1.0.0';
 			$value['version_type'] = 'BETA';
-			$value['logo_signin'] = 'logo-signin.png';
 			$value['bg_sign'] = 'Grdient';
-			$value['primary_color'] = '#0032c8';
+			$value['primary_color'] = '#005cac';
 		} else {
 			$value['icon'] = $get_setting[0]->icon;
 			$value['logo'] = $get_setting[0]->logo;
 			$value['logo_sidebar'] = $get_setting[0]->logo_sidebar;
+			$value['logo_sidebar_one'] = $get_setting[0]->logo_sidebar_one;
+			$value['logo_signin'] = $get_setting[0]->logo_signin;
 			$value['title'] = $get_setting[0]->title;
 			$value['appname'] = $get_setting[0]->appname;
 			$value['develop'] = $get_setting[0]->develop;
 			$value['year_dev'] = $get_setting[0]->year_dev;
 			$value['version'] = $get_setting[0]->version;
 			$value['version_type'] = $get_setting[0]->version_type;
-			$value['logo_signin'] = $get_setting[0]->logo_signin;
 			$value['bg_sign'] = $get_setting[0]->bg_sign;
 			$value['primary_color'] = $get_setting[0]->primary_color;
 		}
@@ -59,7 +61,7 @@ class Signin extends CI_Controller
 				'password' => md5($password),
 			);
 
-			$get_validasi_statususer = $this->M_signIn->get_status_user_employee($username);
+			$get_validasi_statususer = $this->M_signin->get_status_user_employee($username);
 			$validasi_statususer_log = $get_validasi_statususer[0]->status_user;
 
 			if ($validasi_statususer_log == '2') {
@@ -67,7 +69,7 @@ class Signin extends CI_Controller
 				redirect('SignIn');
 			} else {
 
-				$get_validasi = $this->M_signIn->get_employee($username);
+				$get_validasi = $this->M_signin->get_employee($username);
 				$validasi_log = $get_validasi[0]->Login;
 
 				if ($validasi_log == NULL) {
@@ -75,38 +77,40 @@ class Signin extends CI_Controller
 					redirect('SignIn');
 				} else {
 
-					$cek = $this->M_signIn->check_signin('tbl_users', $data);
+					$cek = $this->M_signin->check_signin('tbl_users', $data);
 
 					if (@$cek) {
 
 						// GET DATA EMPLOYEE FOR SESSION
-						$get_employee = $this->M_signIn->get_employee($cek->username);
+						$get_employee = $this->M_signin->get_employee($cek->username);
 						// GET SETTING
-						$get_setting = $this->M_signIn->get_setting();
+						$get_setting = $this->M_signin->get_setting();
 						if ($get_setting == NULL) {
-							$icon = 'icon-default.png';
-							$logo = 'logo-default.png';
-							$logo_sidebar = 'logo-default.png';
+							$icon = 'icon.png';
+							$logo = 'logo.png';
+							$logo_sidebar = 'logo_sidebar.png';
+							$logo_sidebar_one = 'logo_sidebar-one.png';
+							$logo_signin = 'logo_signin.png';
 							$title = 'Judul - Aplikasi Berbasis Web';
 							$appname = 'App Name';
 							$develop = 'Developer';
 							$year_dev = '2021';
 							$version = '1.0.0';
 							$version_type = 'BETA';
-							$logo_signin = 'logo_signin.png';
 							$bg_sign = 'Grdient';
-							$primary_color = '#0032c8';
+							$primary_color = '#005cac';
 						} else {
 							$icon = $get_setting[0]->icon;
 							$logo = $get_setting[0]->logo;
 							$logo_sidebar = $get_setting[0]->logo_sidebar;
+							$logo_sidebar_one = $get_setting[0]->logo_sidebar_one;
+							$logo_signin = $get_setting[0]->logo_signin;
 							$title = $get_setting[0]->title;
 							$appname = $get_setting[0]->appname;
 							$develop = $get_setting[0]->develop;
 							$year_dev = $get_setting[0]->year_dev;
 							$version = $get_setting[0]->version;
 							$version_type = $get_setting[0]->version_type;
-							$logo_signin = $get_setting[0]->logo_signin;
 							$bg_sign = $get_setting[0]->bg_sign;
 							$primary_color = $get_setting[0]->primary_color;
 						}
@@ -160,13 +164,14 @@ class Signin extends CI_Controller
 							'icon' => $icon,
 							'logo' => $logo,
 							'logo_sidebar' => $logo_sidebar,
+							'logo_sidebar_one' => $logo_sidebar_one,
+							'logo_signin' => $logo_signin,
 							'title' => $title,
 							'appname' => $appname,
 							'develop' => $develop,
 							'year_dev' => $year_dev,
 							'version' => $version,
 							'version_type' => $version_type,
-							'logo_signin' => $logo_signin,
 							'bg_sign' => $bg_sign,
 							'primary_color' => $primary_color
 						);
@@ -181,7 +186,7 @@ class Signin extends CI_Controller
 						$this->session->set_userdata($data_session);
 						$this->db->insert('tbl_log', $data_log);
 						$this->session->set_flashdata('s_sigin', $this->input->post('username'));
-						redirect('Home');
+						redirect('Dashboard');
 					} else {
 						$this->session->set_flashdata('f_sigin', "Maaf <b>Username</b> atau <b>Password</b> Anda salah, Silakan Coba Lagi!");
 						redirect('Signin');
@@ -193,7 +198,7 @@ class Signin extends CI_Controller
 
 	public function SignOut($username)
 	{
-		$get_validasi = $this->M_signIn->get_role($username);
+		$get_validasi = $this->M_signin->get_role($username);
 		$cek_role = $get_validasi[0]->Role;
 
 		$data_log = array(

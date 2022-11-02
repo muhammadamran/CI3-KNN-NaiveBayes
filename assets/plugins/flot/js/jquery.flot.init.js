@@ -17,7 +17,7 @@ $(function() {
             bars: {
                 show: true,
                 lineWidth: 0,
-                fillColor: '#0032c8'
+                fillColor: '#005cac'
             }
         },
         grid: {
@@ -54,7 +54,7 @@ $(function() {
         bars: {
             show: true,
             lineWidth: 0,
-            fillColor: '#0032c8'
+            fillColor: '#005cac'
         }
     }, {
         data: [
@@ -120,7 +120,7 @@ $(function() {
         {
             data: retCust,
             label: 'Returning Customer',
-            color: '#0032c8'
+            color: '#005cac'
         }
     ], {
         series: {
@@ -171,7 +171,7 @@ $(function() {
         {
             data: retCust,
             label: 'Returning Customer',
-            color: '#0032c8'
+            color: '#005cac'
         }
     ], {
         series: {
@@ -353,7 +353,7 @@ $(function() {
         {
             data: retCust,
             label: 'Returning Customer',
-            color: '#0032c8'
+            color: '#005cac'
         }
     ], {
         series: {
@@ -405,7 +405,7 @@ $(function() {
         {
             data: retCust,
             label: 'Returning Customer',
-            color: '#0032c8'
+            color: '#005cac'
         }
     ], {
         series: {
@@ -615,7 +615,7 @@ $(function() {
             data: [
                 [1, 90]
             ],
-            color: '#0032c8'
+            color: '#005cac'
         },
         {
             label: "Series 3",

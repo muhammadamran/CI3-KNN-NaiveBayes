@@ -19,9 +19,9 @@ class KNN extends CI_Controller
       redirect('Signin');
     } else if ($this->session->userdata('username') != NULL) {
 
-      $value = '';
+      $value['PageTitle'] = 'K-Nearest Neighbors (KNN) - Index';
 
-      $this->load->view('include/head');
+      $this->load->view('include/head', $value);
       $this->load->view('include/alert');
       $this->load->view('include/top-header');
       $this->load->view('include/sidebar', $value);

@@ -73,7 +73,7 @@ $(function () {
             value: 20
         }],
         resize: true,
-        colors: ['#4d7cff', '#0032c8', '#9097c4']
+        colors: ['#4d7cff', '#005cac', '#9097c4']
     });
 
 
@@ -119,7 +119,7 @@ $(function () {
 
 
         ],
-        lineColors: ['#0032c8', '#9097c4', '#4d7cff'],
+        lineColors: ['#005cac', '#9097c4', '#4d7cff'],
         xkey: 'period',
         ykeys: ['smartphone', 'windows', 'mac'],
         labels: ['Phone', 'Windows', 'Mac'],
@@ -178,12 +178,12 @@ $(function () {
         labels: ['Phone', 'Windows', 'Mac'],
         pointSize: 3,
         fillOpacity: 0,
-        pointStrokeColors: ['#0032c8', '#4d7cff', '#9097c4'],
+        pointStrokeColors: ['#005cac', '#4d7cff', '#9097c4'],
         behaveLikeLine: true,
         gridLineColor: 'transparent',
         lineWidth: 3,
         hideHover: 'auto',
-        lineColors: ['#0032c8', '#4d7cff', '#9097c4'],
+        lineColors: ['#005cac', '#4d7cff', '#9097c4'],
         resize: true
 
     });
@@ -285,7 +285,7 @@ $(function () {
     xkey: 'y',
     ykeys: ['a', 'b', 'c'],
     labels: ['A', 'B', 'C'],
-    barColors: ['#0032c8', '#9097c4', '#4d7cff'],
+    barColors: ['#005cac', '#9097c4', '#4d7cff'],
     hideHover: 'auto',
     gridLineColor: 'transparent',
     resize: true

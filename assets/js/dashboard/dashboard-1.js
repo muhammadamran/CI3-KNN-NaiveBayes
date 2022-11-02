@@ -176,7 +176,7 @@
     xkey: 'y',
     ykeys: ['a', 'b', 'c'],
     labels: ['A', 'B', 'C'],
-    barColors: ['#FC6C8E', '#0032c8'],
+    barColors: ['#FC6C8E', '#005cac'],
     hideHover: 'auto',
     gridLineColor: 'transparent',
     resize: true
