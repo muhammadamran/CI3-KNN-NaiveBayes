@@ -1,15 +1,14 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Tentang extends CI_Controller
+class KNN extends CI_Controller
 {
 
   public function __construct()
   {
     parent::__construct();
     //LOAD MODELS
-    $this->load->model('M_tentang');
-    $this->load->model('home/M_home');
+    $this->load->model('M_knn');
   }
 
   public function index()
@@ -17,7 +16,7 @@ class Tentang extends CI_Controller
     if ($this->session->userdata('username') == NULL) {
 
       $this->session->set_flashdata('f_role', "Anda belum memulai <b>session</b>!, Silahkan mulai <b>session</b> anda!");
-      redirect('SignIn');
+      redirect('Signin');
     } else if ($this->session->userdata('username') != NULL) {
 
       $value = '';
@@ -26,7 +25,7 @@ class Tentang extends CI_Controller
       $this->load->view('include/alert');
       $this->load->view('include/top-header');
       $this->load->view('include/sidebar', $value);
-      $this->load->view('tentang', $value);
+      $this->load->view('knn', $value);
       $this->load->view('include/footer');
     }
   }

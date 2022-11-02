@@ -1,16 +1,18 @@
 <style type="text/css">
-.dropdown-item:hover {
-    color: #fff;
-    background-color: #0032c8;
-    border-color: #0032c8;
-}
-.logo-bulog-sign {
-    width: 40%;
-}
-.no-DO{
-    margin-top: -22px;
-    margin-bottom: 5px;
-}
+    .dropdown-item:hover {
+        color: #fff;
+        background-color: #0032c8;
+        border-color: #0032c8;
+    }
+
+    .logo-bulog-sign {
+        width: 40%;
+    }
+
+    .no-DO {
+        margin-top: -22px;
+        margin-bottom: 5px;
+    }
 </style>
 <!-- **********************************Content body start***********************************-->
 <div class="content-body">
@@ -18,8 +20,8 @@
         <div class="row page-titles mx-0">
             <div class="col p-md-0">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?= base_url('home');?>">Home</a></li>
-                    <li class="breadcrumb-item active"><a href="<?= base_url('tentang');?>">Tentang Aplikasi</a></li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('home'); ?>">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="<?= base_url('tentang'); ?>">Tentang Aplikasi</a></li>
                 </ol>
             </div>
         </div>
@@ -35,7 +37,7 @@
                             <p>Developmet 2021.</p>
                             <form class="mt-5 mb-5">
                                 <div class="text-center mb-4 mt-4">
-                                    <a href="<?= base_url('home');?>" class="btn btn-primary">Lihat Home</a>
+                                    <a href="<?= base_url('home'); ?>" class="btn btn-primary">Lihat Home</a>
                                 </div>
                             </form>
                             <div class="text-center">

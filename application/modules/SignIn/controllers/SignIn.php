@@ -1,20 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class SignIn extends CI_Controller
+class Signin extends CI_Controller
 {
 
 	public function __construct()
 	{
 		parent::__construct();
 		// MODELS
-		$this->load->model('M_SignIn');
+		$this->load->model('M_signin');
 	}
 
 	public function index()
 	{
 		// GET SETTING
-		$get_setting = $this->M_SignIn->get_setting();
+		$get_setting = $this->M_signin->get_setting();
 		if ($get_setting == NULL) {
 			$value['icon'] = 'icon.png';
 			$value['logo'] = 'logo.png';
@@ -59,7 +59,7 @@ class SignIn extends CI_Controller
 				'password' => md5($password),
 			);
 
-			$get_validasi_statususer = $this->M_SignIn->get_status_user_employee($username);
+			$get_validasi_statususer = $this->M_signIn->get_status_user_employee($username);
 			$validasi_statususer_log = $get_validasi_statususer[0]->status_user;
 
 			if ($validasi_statususer_log == '2') {
@@ -67,7 +67,7 @@ class SignIn extends CI_Controller
 				redirect('SignIn');
 			} else {
 
-				$get_validasi = $this->M_SignIn->get_employee($username);
+				$get_validasi = $this->M_signIn->get_employee($username);
 				$validasi_log = $get_validasi[0]->Login;
 
 				if ($validasi_log == NULL) {
@@ -75,14 +75,14 @@ class SignIn extends CI_Controller
 					redirect('SignIn');
 				} else {
 
-					$cek = $this->M_SignIn->check_signin('tbl_users', $data);
+					$cek = $this->M_signIn->check_signin('tbl_users', $data);
 
 					if (@$cek) {
 
 						// GET DATA EMPLOYEE FOR SESSION
-						$get_employee = $this->M_SignIn->get_employee($cek->username);
+						$get_employee = $this->M_signIn->get_employee($cek->username);
 						// GET SETTING
-						$get_setting = $this->M_SignIn->get_setting();
+						$get_setting = $this->M_signIn->get_setting();
 						if ($get_setting == NULL) {
 							$icon = 'icon-default.png';
 							$logo = 'logo-default.png';
@@ -181,10 +181,10 @@ class SignIn extends CI_Controller
 						$this->session->set_userdata($data_session);
 						$this->db->insert('tbl_log', $data_log);
 						$this->session->set_flashdata('s_sigin', $this->input->post('username'));
-						redirect('home');
+						redirect('Home');
 					} else {
 						$this->session->set_flashdata('f_sigin', "Maaf <b>Username</b> atau <b>Password</b> Anda salah, Silakan Coba Lagi!");
-						redirect('signin');
+						redirect('Signin');
 					}
 				}
 			}
@@ -193,7 +193,7 @@ class SignIn extends CI_Controller
 
 	public function SignOut($username)
 	{
-		$get_validasi = $this->M_SignIn->get_role($username);
+		$get_validasi = $this->M_signIn->get_role($username);
 		$cek_role = $get_validasi[0]->Role;
 
 		$data_log = array(
@@ -205,6 +205,6 @@ class SignIn extends CI_Controller
 		$this->db->insert('tbl_log', $data_log);
 		$this->session->sess_destroy();
 		$this->session->set_flashdata('n_gsignin', 'Anda Berhasil SignOut!');
-		redirect('signin');
+		redirect('Signin');
 	}
 }
